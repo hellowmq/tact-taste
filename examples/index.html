@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tact Taste — 视觉与交互实验场</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css?v=20261025-ui">
+  <link rel="stylesheet" href="gallery.css?v=20261025-ui">
+  <script src="demo.js?v=20261025-ui" defer></script>
+  <script src="gallery.js?v=20261025-ui" defer></script>
+  <script src="text-geometry.js" defer></script>
+  <script src="particle-renderer.js?v=20261025" defer></script>
+  <script src="showcase.js?v=20261025" defer></script>
+  <script src="wire-theme.js" defer></script>
+</head>
+<body class="showcase-page">
+  <a class="skip" href="#main">跳到示例</a>
+  <header class="masthead">
+    <a class="wordmark" href="../README.md">Tact Taste</a>
+    <div class="header-actions"><label class="motion-option"><input id="reduce-motion" type="checkbox"> 减少动态效果</label><a href="#light-studio">探索 UI</a></div>
+  </header>
+  <main id="main">
+    <div class="intro">
+      <h1>看见文字的另一面。</h1>
+      <p>三句话，两件线雕，一次连续的视角穿越。</p>
+    </div>
+
+    <section class="showcase" aria-label="连续文字的双视角粒子线雕">
+      <div class="theatre" id="theatre" data-scene="0" data-playing="false">
+        <canvas id="motion-canvas" role="img" aria-label="连续三句文字的双视角线雕：让界面有层次；让变化有来处；让操作有回音。">让界面有层次。让变化有来处。让操作有回音。</canvas>
+        <span class="sr-only" id="semantic-text">让界面有层次</span>
+        <p id="fallback-text" class="fallback-text" hidden>让界面有层次</p>
+        <span id="pair-label" class="pair-label">文本 1 · 2 / 同一件线雕</span>
+        <div class="stage-meta"><span id="scene-label">01 / SEE THE ORDER.</span><span class="stage-progress" aria-hidden="true"><span id="stage-progress-fill"></span></span><output id="play-time" for="scene-seek">00:01 / 00:16</output></div>
+      </div>
+      <div class="showcase-controls">
+        <div class="transport"><button class="primary" id="play" type="button" aria-pressed="false">播放</button><button class="secondary" id="replay" type="button">重播</button></div>
+        <div class="seek-control"><label for="scene-seek">连续文本进度</label><input id="scene-seek" type="range" min="0" max="16" step="0.01" value="1.2" aria-valuetext="1.2 秒，共 16 秒"></div>
+        <p id="playback-note">文本 1 → 2，再由文本 2 → 3。拖动可反向观看。</p>
+      </div>
+      <div class="text-navigation scene-buttons" role="group" aria-label="阅读三句话">
+        <button type="button" data-scene-jump="0" aria-pressed="true"><span>01</span><strong>让界面有层次</strong><small>布局 · 留白 · 排版</small></button>
+        <button type="button" data-scene-jump="1" aria-pressed="false"><span>02</span><strong>让变化有来处</strong><small>身份 · 空间 · 连续</small></button>
+        <button type="button" data-scene-jump="2" aria-pressed="false"><span>03</span><strong>让操作有回音</strong><small>输入 · 等待 · 结果</small></button>
+      </div>
+      <div class="text-context"><span id="context-index" class="sr-only">01</span><h2>有分寸，也有锋芒。</h2><p id="context-copy">用布局、留白和排版，让重要的内容先被看见。</p></div>
+      <p id="showcase-status" class="sr-only" role="status" aria-live="polite">已暂停，可播放或选择分镜。</p>
+    </section>
+
+    <nav class="gallery-nav" aria-label="探索 UI 示例"><a href="#light-studio">01 光谱</a><a href="#type-composer">02 字场</a><a href="#paper-walk">03 纸间</a><a href="#operations">操作研究</a></nav>
+
+    <section class="ui-specimen light-studio" id="light-studio" aria-labelledby="light-title" data-palette="lilac">
+      <div class="specimen-heading"><span>01 / 光谱</span><span>LIGHT STUDIO</span></div>
+      <div class="light-layout">
+        <div class="specimen-copy"><h2 id="light-title">把光，<br>调成你的样子。</h2><p>颜色、透光与高光，在同一个表面相遇。</p>
+          <div class="light-controls"><fieldset class="swatches"><legend>光色</legend><button type="button" data-light="lilac" aria-pressed="true" aria-label="紫暮"></button><button type="button" data-light="coral" aria-pressed="false" aria-label="珊瑚"></button><button type="button" data-light="ice" aria-pressed="false" aria-label="冰蓝"></button></fieldset>
+          <div class="control-label"><label for="glass-alpha">透光</label><output id="glass-alpha-value" for="glass-alpha">68%</output></div><input type="range" id="glass-alpha" min="20" max="95" value="68" aria-label="透光"></div>
+        </div>
+        <div class="light-object" id="light-object" role="img" aria-label="可调光色与透光的光谱玻璃环。移动指针改变光的位置。">
+          <div class="light-spill" aria-hidden="true"></div><div class="glass-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="glass-readout"><strong>折射之间</strong><span>DRAG THE LIGHT</span></div>
+        </div>
+      </div>
+      <p class="specimen-foot">移动指针改变光的位置。</p><p class="sr-only" id="light-status" role="status">紫暮，透光 68%。</p>
+    </section>
+
+    <section class="ui-specimen type-composer" id="type-composer" aria-labelledby="type-title" data-layout="bold" data-inverted="false">
+      <div class="specimen-heading"><span>02 / 字场</span><span>TYPE COMPOSER</span></div>
+      <div class="type-layout"><div class="type-art" role="img" aria-label="形随意动"><div class="type-guide" aria-hidden="true"></div><span aria-hidden="true">形</span><span aria-hidden="true">随</span><span aria-hidden="true">意</span><span aria-hidden="true">动</span></div>
+        <div class="type-tools"><h2 id="type-title">文字，<br>自己站得住。</h2><p>同一句话，换一种节奏。</p><div class="layout-buttons" role="group" aria-label="排版方式"><button type="button" data-layout="bold" aria-pressed="true">大字</button><button type="button" data-layout="space" aria-pressed="false">留白</button><button type="button" data-layout="offset" aria-pressed="false">错位</button></div>
+          <div class="control-label"><label for="type-leading">行间距</label><output for="type-leading" id="type-leading-value">1.0</output></div><input id="type-leading" type="range" min="0.8" max="1.3" value="1" step="0.01"><button class="invert-type" id="invert-type" type="button" aria-pressed="false">反转配色</button><p class="type-caption">排版是关系，不只是字号。</p></div>
+      </div><p class="sr-only" id="type-status" role="status">大字排版。</p>
+    </section>
+
+    <section class="ui-specimen paper-walk" id="paper-walk" aria-labelledby="paper-title" data-collected="false">
+      <div class="specimen-heading"><span>03 / 纸间</span><span>PAPER WALK</span></div>
+      <div class="paper-layout"><div class="specimen-copy"><h2 id="paper-title">把期待，<br>放在手心。</h2><p>一张可以选择，也可以收回的收藏票。</p>
+        <fieldset class="ticket-options"><legend>选择票面</legend><button type="button" data-ticket="012" aria-pressed="true">012</button><button type="button" data-ticket="024" aria-pressed="false">024</button><button type="button" data-ticket="036" aria-pressed="false">036</button></fieldset>
+        <button type="button" id="collect-ticket" class="collect-ticket" aria-pressed="false">收下这张票</button><p class="local-only">仅本页收藏，不提交订单。</p></div>
+        <div class="ticket-stage"><article class="paper-ticket" id="paper-ticket" aria-label="纸上漫游收藏票 012"><div class="ticket-main"><h3>纸上漫游<span>PAPER WALK</span></h3><strong id="ticket-number">012</strong><div class="ticket-meta"><span>收藏序号</span><span aria-hidden="true">— — —</span></div><p>把日常的片段，折进一张纸里。<br>而此刻，先放在你手心。</p></div><div class="ticket-stub"><span class="foil-seal" aria-hidden="true"></span><p>留住这一刻<span aria-hidden="true">— — —</span></p></div><span class="collected-mark" aria-hidden="true">已收藏</span></article></div>
+      </div><p class="specimen-foot">纸的温度，操作的余地。</p><p class="sr-only" id="ticket-status" role="status" aria-live="polite">尚未收藏，当前票面 012。</p>
+    </section>
+
+    <div class="operation-gallery" id="operations"><div class="studies-intro"><h2>从作品，到操作。</h2><p>同一套分寸，落到每一次选择、等待与反悔。</p></div>
+
+    <div class="operation-grid">
+    <section class="study selection-study" aria-labelledby="selection-title">
+      <div class="annotation"><span class="number">01</span><h2 id="selection-title">连续选择</h2><p>同一个指示物，接住下一次选择。</p></div>
+      <div class="experiment" id="selection-demo" data-selection="0">
+        <div class="tabs" role="tablist" aria-label="阅读主题">
+          <span class="tab-indicator" aria-hidden="true"></span>
+          <button id="tab-feedback" role="tab" aria-selected="true" aria-controls="panel-feedback" tabindex="0">反馈</button>
+          <button id="tab-continuity" role="tab" aria-selected="false" aria-controls="panel-continuity" tabindex="-1">连续性</button>
+          <button id="tab-control" role="tab" aria-selected="false" aria-controls="panel-control" tabindex="-1">控制感</button>
+        </div>
+        <div class="selection-material" aria-hidden="true"><span><i style="--contour:1"></i><i style="--contour:2"></i><i style="--contour:3"></i><i style="--contour:4"></i><i style="--contour:5"></i><i style="--contour:6"></i><i style="--contour:7"></i></span><span><i style="--contour:1"></i><i style="--contour:2"></i><i style="--contour:3"></i><i style="--contour:4"></i><i style="--contour:5"></i><i style="--contour:6"></i><i style="--contour:7"></i></span><span><i style="--contour:1"></i><i style="--contour:2"></i><i style="--contour:3"></i><i style="--contour:4"></i><i style="--contour:5"></i><i style="--contour:6"></i><i style="--contour:7"></i></span></div>
+        <div class="reading-stack">
+        <div class="reading" id="panel-feedback" role="tabpanel" aria-labelledby="tab-feedback" tabindex="0"><h3>操作，应当有回音。</h3><p>按下时回应，等待时说明，结果有依据。</p></div>
+        <div class="reading" id="panel-continuity" role="tabpanel" aria-labelledby="tab-continuity" tabindex="0" hidden><h3>变化，仍是同一个对象。</h3><p>新的选择从当前位置继续，关系始终可追踪。</p></div>
+        <div class="reading" id="panel-control" role="tabpanel" aria-labelledby="tab-control" tabindex="0" hidden><h3>改主意，也是一种正常操作。</h3><p>允许反向、取消与恢复，让用户保持主动。</p></div>
+        </div>
+        <p class="hint">试试来回切换。方向键、Home 和 End 也可选择。</p>
+      </div>
+    </section>
+
+    <section class="study save-study" aria-labelledby="save-title">
+      <div class="annotation"><span class="number">02</span><h2 id="save-title">保存有回音</h2><p>输入与结果，各自有归属。</p></div>
+      <div class="experiment">
+        <div id="save-editor" aria-busy="false">
+          <div class="range-heading"><label for="save-value">阅读宽度</label><output id="save-value-label" for="save-value">50</output></div>
+          <input id="save-value" type="range" min="0" max="100" value="50">
+          <div class="save-preview" aria-hidden="true"><span class="preview-kicker">A NOTE ON SPACE</span><strong>给阅读，<br>留一点呼吸。</strong><div class="preview-lines"><i></i><i></i><i></i></div></div>
+          <div class="save-actions"><button class="primary" id="save">保存</button><label class="failure-option"><input id="fail-next" type="checkbox"> 下次模拟失败</label></div>
+        </div>
+        <div class="result" data-state="idle">
+          <p id="save-status" role="status" aria-live="polite" aria-atomic="true">尚未保存</p>
+          <p class="confirmed">模拟确认：<output id="confirmed-value">50</output></p>
+          <button id="retry" class="secondary" hidden>重试</button>
+        </div>
+        <p class="hint">仅本地模拟，不写入远端。第一笔较慢，连续保存可观察结果乱序。</p>
+      </div>
+    </section>
+
+    <section class="study drag-study" aria-labelledby="drag-title">
+      <div class="annotation"><span class="number">03</span><h2 id="drag-title">拖动可以取消</h2><p>先预览，松手再确认。</p></div>
+      <div class="experiment">
+        <div class="range-heading"><span id="drag-label">卡片位置</span><span><output id="drag-value">35</output><span class="unit"> / 100</span></span></div>
+        <div id="drag-track" class="drag-track" role="slider" tabindex="0" aria-labelledby="drag-label" aria-describedby="drag-help" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-valuetext="35，已确认" data-dragging="false">
+          <span class="rail" aria-hidden="true"></span><span class="drag-ghost" aria-hidden="true"></span><span class="thumb" aria-hidden="true"></span>
+        </div>
+        <p id="drag-status" role="status" aria-live="polite" aria-atomic="true">已确认位置 35</p>
+        <p id="drag-help" class="hint">拖出轨道松手或按 Escape 可取消。方向键、Home 和 End 可直接调整。</p>
+      </div>
+    </section>
+    </div></div>
+
+    <details class="supporting"><summary>更多交互研究</summary>
+    <section class="wire-study" aria-labelledby="wire-title">
+      <div class="wire-heading"><div><h2 id="wire-title">换个主题，也换个视角。</h2><p>同一件线雕，两种观看方式。</p></div><div class="theme-buttons" role="group" aria-label="线雕主题"><button type="button" id="theme-day" aria-pressed="true">昼</button><button type="button" id="theme-night" aria-pressed="false">夜</button></div></div>
+      <div class="wire-stage" id="wire-stage" data-theme="day" data-progress="0" data-moving="false">
+        <canvas id="wire-canvas" role="img" aria-label="同一组原创三维空间曲线：正面形成圆环，转向侧面形成月牙。">三维图形不可用时，主题切换仍可使用。</canvas>
+        <div class="wire-fallback" aria-hidden="true"><span></span></div>
+        <div class="wire-meta"><span id="wire-theme-label">昼间主题</span><span>同一组空间曲线</span></div>
+      </div>
+      <div class="wire-notes"><p>视角在动，内容保持稳定。</p><p>快速切回，从当前角度继续。</p></div>
+      <p class="sr-only" id="wire-status" role="status" aria-live="polite">昼间主题，圆环正视图。</p>
+    </section>
+
+    </details>
+  </main>
+  <footer><span>有分寸的反馈，连贯的变化。</span><a href="../docs/EXAMPLES.md">示例说明与验收</a></footer>
+</body>
+</html>

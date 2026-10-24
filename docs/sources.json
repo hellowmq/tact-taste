@@ -1,0 +1,201 @@
+{
+  "checked_on": "2026-10-23",
+  "project_license": "MIT",
+  "third_party_code_bundled": false,
+  "third_party_assets_bundled": false,
+  "method": "Dated provenance check; not an exhaustive legal or asset audit.",
+  "public_references": [
+    {
+      "id": "Aureliengmz/clearwater",
+      "kind": "public-reading-reference",
+      "url": "https://github.com/Aureliengmz/clearwater",
+      "commit": "4bc826134321043a25df3c2b6fed16fb7b9241e8",
+      "license_status": "MIT",
+      "evidence_url": "https://github.com/Aureliengmz/clearwater/blob/4bc826134321043a25df3c2b6fed16fb7b9241e8/LICENSE",
+      "checked_scope": [
+        "repository-metadata",
+        "complete-file-tree-license-names",
+        "README-license-section",
+        "license-file"
+      ],
+      "tree_truncated": false,
+      "redistributed": false,
+      "use": "link-and-independent-summary-only"
+    },
+    {
+      "id": "Yalantis/ToDoList",
+      "kind": "public-reading-reference",
+      "url": "https://github.com/Yalantis/ToDoList",
+      "commit": "45bc5617422488bdfb5d580d13b8c2389a48150f",
+      "license_status": "MIT",
+      "evidence_url": "https://github.com/Yalantis/ToDoList/blob/45bc5617422488bdfb5d580d13b8c2389a48150f/README.md#license",
+      "checked_scope": [
+        "repository-metadata",
+        "complete-file-tree-license-names",
+        "README-license-section"
+      ],
+      "tree_truncated": false,
+      "redistributed": false,
+      "use": "link-and-independent-summary-only"
+    },
+    {
+      "id": "hoodini/motion-in-code",
+      "kind": "public-reading-reference",
+      "url": "https://github.com/hoodini/motion-in-code",
+      "commit": "d556092244ecc2bf9d2df2430aed1b6e1b4df0a2",
+      "license_status": "not-established-in-checked-scope",
+      "evidence_url": "https://github.com/hoodini/motion-in-code/tree/d556092244ecc2bf9d2df2430aed1b6e1b4df0a2",
+      "checked_scope": [
+        "repository-metadata",
+        "complete-file-tree-license-names",
+        "README-license-section"
+      ],
+      "tree_truncated": false,
+      "redistributed": false,
+      "use": "link-and-independent-summary-only"
+    },
+    {
+      "id": "riba2534/claude-opus-5-5-demo",
+      "kind": "public-reading-reference",
+      "url": "https://github.com/riba2534/claude-opus-5-5-demo",
+      "commit": "54adc1fb64155f9dd7c1c90ecae7b8185ac540b8",
+      "license_status": "not-established-in-checked-scope",
+      "evidence_url": "https://github.com/riba2534/claude-opus-5-5-demo/tree/54adc1fb64155f9dd7c1c90ecae7b8185ac540b8",
+      "checked_scope": [
+        "repository-metadata",
+        "complete-file-tree-license-names",
+        "README-license-section"
+      ],
+      "tree_truncated": false,
+      "redistributed": false,
+      "use": "link-and-independent-summary-only"
+    }
+  ],
+  "excluded_originals": [
+    {
+      "id": "C-A",
+      "kind": "unidentified-html-reference",
+      "bytes": 38798,
+      "sha256": "9a2e054d5a6b9ab1c39d1b8c9ad17d3b8879045136b961d366be0290c1f93301",
+      "license_status": "unknown",
+      "redistributed": false,
+      "use": "excluded-original; independently-worded-general-mechanisms-only"
+    },
+    {
+      "id": "C-B",
+      "kind": "unidentified-html-reference",
+      "bytes": 53059,
+      "sha256": "4c6e4c30305bba63011c26eed88c4570b37aedfbc814c52d794dfd64e050fee5",
+      "license_status": "unknown",
+      "redistributed": false,
+      "use": "excluded-original; independently-worded-general-mechanisms-only"
+    },
+    {
+      "id": "M-A",
+      "kind": "unidentified-html-reference",
+      "bytes": 36780,
+      "sha256": "9cd764894929f8a8622266aee1051f7a699084cad4563fc5c187dbee8c377d67",
+      "license_status": "unknown",
+      "redistributed": false,
+      "use": "excluded-original; independently-worded-general-mechanisms-only"
+    },
+    {
+      "id": "M-B",
+      "kind": "unidentified-html-reference",
+      "bytes": 21748,
+      "sha256": "c7eccd8af3b9737d0e8bd0406349212509335e4db45c5269d3637cc766215e52",
+      "license_status": "unknown",
+      "redistributed": false,
+      "use": "excluded-original; independently-worded-general-mechanisms-only"
+    }
+  ],
+  "other_exclusions": [
+    {
+      "id": "layout-principle-quotation",
+      "license_status": "original-source-unconfirmed",
+      "redistributed": false,
+      "use": "original-quotation-omitted; independent-paraphrase-only"
+    },
+    {
+      "id": "local-project-sources-and-artifacts",
+      "license_status": "not-evaluated-for-redistribution",
+      "redistributed": false,
+      "use": "generalized-engineering-judgments-only"
+    },
+    {
+      "id": "creative-websites-and-model-cost-research",
+      "license_status": "outside-distribution-scope",
+      "redistributed": false,
+      "use": "excluded"
+    }
+  ],
+  "local_design_inspirations": [
+    {
+      "id": "multi-view-wire-presentation",
+      "checked_on": "2026-10-23",
+      "checked_scope": [
+        "local-project-instructions",
+        "local-viewer-camera-transition",
+        "root-license-file-names"
+      ],
+      "license_status": "project-wide-redistribution-permission-not-established-in-checked-scope",
+      "redistributed": false,
+      "use": "presentation-idea-only; independent-geometry-projection-and-controller; no-solver-or-assets-copied"
+    }
+  ],
+  "visual_reading_references": [
+    {
+      "id": "codrops-kinetic-typography",
+      "author": "Mario Carrillo",
+      "url": "https://tympanus.net/codrops/2020/06/02/kinetic-typography-with-three-js/",
+      "demo": "https://tympanus.net/Tutorials/codrops-kinetic-typo/",
+      "observed_on": "2026-10-25",
+      "evidence": "article-reading; browser-Endless-and-Twisted-views",
+      "redistributed": false,
+      "use": "visual-comparison-only; independent-renderer"
+    },
+    {
+      "id": "codrops-interactive-particles",
+      "author": "Bruno Imbrizi",
+      "url": "https://tympanus.net/codrops/2019/01/17/interactive-particles-with-three-js/",
+      "demo": "https://tympanus.net/Tutorials/InteractiveParticles/",
+      "observed_on": "2026-10-25",
+      "evidence": "article-reading; browser-particle-portrait; not-complete-input-validation",
+      "redistributed": false,
+      "use": "visual-comparison-only; no-portrait-or-font-reused"
+    },
+    {
+      "id": "codrops-kinetic-page-transition",
+      "author": "Manoela Ilic",
+      "url": "https://tympanus.net/codrops/2021/09/29/kinetic-typography-page-transition/",
+      "demo": "https://tympanus.net/Development/KineticTypePageTransition/",
+      "observed_on": "2026-10-25",
+      "evidence": "article-reading; browser-expanded-A-Poem-view",
+      "redistributed": false,
+      "use": "visual-comparison-only; no-code-or-image-reused"
+    }
+  ],
+  "ui_material_review": {
+    "observed_on": "2026-10-25",
+    "references": [
+      "C-B",
+      "M-A",
+      "C-A",
+      "M-B"
+    ],
+    "scope": "read-only local source observation; independent UI design and implementation",
+    "mechanisms": [
+      "layered gradient alpha",
+      "opacity envelopes",
+      "gradient typography",
+      "continuous geometric state"
+    ],
+    "new_specimens": [
+      "Light Studio",
+      "Type Composer",
+      "Paper Walk"
+    ],
+    "redistributed_originals": false,
+    "new_runtime_dependencies": false
+  }
+}

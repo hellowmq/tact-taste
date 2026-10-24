@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tact Taste"
+  short_description: "有分寸的 UI 与交互审美：布局层级、视觉状态、连续变化与取消恢复"
+  default_prompt: "用 $tact-taste 改善这个项目的 UI 与交互，检查布局层级、控件状态和操作反馈，保留现有视觉身份与锁定行为，并验证受影响的操作流程。"
