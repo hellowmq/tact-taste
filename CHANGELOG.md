@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- 重排中英文 README，新增实际画面的封面、操作摘录与可展开动图；开发细节移至独立文档。
+- 分发检查支持有来源记录的 PNG/GIF，并核验 Markdown 中 HTML 图片与 srcset 的相对链接。
+
 ## 0.1.0
 
 Tact Taste 的第一个版本：把 UI 审美、动效与可靠的操作反馈整理为可独立使用的 Agent Skill。

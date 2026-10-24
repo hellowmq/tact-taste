@@ -197,5 +197,51 @@
     ],
     "redistributed_originals": false,
     "new_runtime_dependencies": false
+  },
+  "owned_preview_media": {
+    "created_on": "2026-10-25",
+    "license": "MIT",
+    "kind": "project-owned-browser-captures-and-independent-layout",
+    "implementation_commit": "5201c2e766fce754b9e8eb5b211eb68b00141919",
+    "third_party_material_included": false,
+    "files": [
+      {
+        "path": "docs/media/cover.png",
+        "sha256": "cad8d3daffd02325a705c844f778409f03c3ba124a16e3d81564b8178df3bdae",
+        "bytes": 650135,
+        "width": 1600,
+        "height": 840
+      },
+      {
+        "path": "docs/media/behavior.png",
+        "sha256": "a5666957e0fcfc0f8e7042ed9b97a1d372e87fcc160d1c5a70935631e475f6c4",
+        "bytes": 127793,
+        "width": 1440,
+        "height": 410
+      },
+      {
+        "path": "docs/media/behavior-mobile.png",
+        "sha256": "aab7025aa135c03ea1a1cb82e9ecb7b0eaebd4932854b11c7a045f24f4602e10",
+        "bytes": 166410,
+        "width": 720,
+        "height": 1050
+      },
+      {
+        "path": "docs/media/interactions-poster.png",
+        "sha256": "317c99280b7003b493766c816495b178f05dd55048d89713f1905219f0bd3781",
+        "bytes": 177856,
+        "width": 800,
+        "height": 588
+      },
+      {
+        "path": "docs/media/interactions.gif",
+        "sha256": "0838699310cc721b58658266798f3a4e57d69871d5f875610bcc77d02b3f1799",
+        "bytes": 4074926,
+        "width": 800,
+        "height": 588,
+        "frames": 140,
+        "duration_ms": 14000
+      }
+    ]
   }
 }

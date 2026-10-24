@@ -100,6 +100,23 @@ class DistributionTests(unittest.TestCase):
             install(ROOT / "inside" / "tact-taste")
         self.assertFalse((ROOT / "inside").exists())
 
+    def test_preview_bytes_must_match_record_and_image_header(self):
+        stage = self.staged_source()
+        (stage / "docs/media/cover.png").write_bytes(b"not an image")
+        _, errors = check(stage)
+        self.assertTrue(any("Preview media differs" in error for error in errors))
+        self.assertTrue(any("Invalid preview media header" in error for error in errors))
+
+    def test_readme_html_images_and_srcset_are_checked(self):
+        stage = self.staged_source()
+        readme = stage / "README.md"
+        readme.write_text(readme.read_text() + '\n<img src="docs/media/missing.png">\n')
+        _, errors = check(stage)
+        self.assertTrue(any("missing.png" in error for error in errors))
+        readme.write_text(readme.read_text() + '\n<source srcset="../outside.png">\n')
+        _, errors = check(stage)
+        self.assertTrue(any("outside.png" in error for error in errors))
+
     def test_portable_copy_passes_checks(self):
         manifest, errors = check(self.staged_source())
         self.assertEqual(errors, [])

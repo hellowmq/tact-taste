@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import struct
 import sys
 from urllib.parse import unquote, urlsplit
 
@@ -20,6 +21,8 @@ class LocalResources(HTMLParser):
         for key, value in attrs:
             if key in ("href", "src") and value:
                 self.links.append(value)
+            elif key == "srcset" and value:
+                self.links.extend(item.strip().split()[0] for item in value.split(",") if item.strip())
 
 
 def check(root=ROOT):
@@ -49,13 +52,35 @@ def check(root=ROOT):
         if not re.fullmatch(r"[0-9a-f]{40}", record.get("commit", "")) or record.get("redistributed") is not False:
             errors.append(f"Invalid source evidence: {record.get('id')}")
     excluded_hashes = {record["sha256"] for record in source_data["excluded_originals"]}
+    owned_media = {record["path"]: record for record in source_data.get("owned_preview_media", {}).get("files", [])}
     private_prefixes = ("/" + "Users/", "/" + "home/", "/var/" + "folders/", "file" + "://")
     for name in manifest["files"]:
         path = root / name
         data = path.read_bytes()
         if hashlib.sha256(data).hexdigest() in excluded_hashes:
             errors.append(f"Excluded original was included: {name}")
-        text = data.decode("utf-8")
+        if path.suffix in (".png", ".gif"):
+            record = owned_media.get(name)
+            if not name.startswith("docs/media/") or record is None:
+                errors.append(f"Unregistered preview media: {name}")
+            elif hashlib.sha256(data).hexdigest() != record.get("sha256"):
+                errors.append(f"Preview media differs from source record: {name}")
+            if path.suffix == ".png":
+                valid = len(data) >= 24 and data[:8] == b"\x89PNG\r\n\x1a\n" and data[12:16] == b"IHDR"
+                dimensions = struct.unpack(">II", data[16:24]) if valid else (0, 0)
+            else:
+                valid = len(data) >= 13 and data[:6] in (b"GIF87a", b"GIF89a")
+                dimensions = struct.unpack("<HH", data[6:10]) if valid else (0, 0)
+            if not valid or not all(dimensions):
+                errors.append(f"Invalid preview media header: {name}")
+            if len(data) > 8 * 1024 * 1024:
+                errors.append(f"Preview media exceeds 8 MiB budget: {name}")
+            continue
+        try:
+            text = data.decode("utf-8")
+        except UnicodeDecodeError:
+            errors.append(f"Unsupported binary file: {name}")
+            continue
         if any(prefix in text for prefix in private_prefixes):
             errors.append(f"Private/absolute machine path in {name}")
         if any(line.rstrip() != line for line in text.splitlines()):
@@ -65,6 +90,9 @@ def check(root=ROOT):
             if sum(line.startswith("```") for line in text.splitlines()) % 2:
                 errors.append(f"Unclosed code fence: {name}")
             links = re.findall(r"!?\[[^\]]*\]\(([^)]+)\)", text)
+            parser = LocalResources()
+            parser.feed(text)
+            links.extend(parser.links)
         elif path.suffix == ".html":
             parser = LocalResources()
             parser.feed(text)
