@@ -49,3 +49,19 @@ python3 scripts/package.py --output dist/tact-taste.zip
 提交经验时给出可复现操作、预期结果、实际验证与限制。区分设计判断、源码观察与运行证据，记录新材料的来源和许可。展示片的节奏与密度不是常用控件的统一标准；截图不证明完整操作、读屏、物理触屏或性能。
 
 [来源与许可](SOURCES.md) · [视觉参考](VISUAL-REFERENCES.md) · [保留情况](PRESERVATION.md)
+
+
+## GitHub Pages 展示页
+
+在线页面： [Tact Taste](https://tech.wenmq.cn/tact-taste/)。账号个人 Pages 的自定义域名由 GitHub 继承，此项目独立部署到 `/tact-taste/`；个人站的源码和设置不参与本工作流。
+
+`site/` 是精简展示页的排版与控制层，文字线雕和三组视觉 UI 从 `examples/` 复用。构建只输出入口、八个脚本/样式与一张分享封面，共十个文件，不上传整个项目目录。
+
+```sh
+python3 scripts/build_pages.py --output dist/pages --base-url https://tech.wenmq.cn/tact-taste/
+python3 -m http.server 8766 --bind 127.0.0.1 --directory dist/pages
+```
+
+输出目录已存在时构建拒绝覆盖；使用新的空输出目录。打开本机 8766 端口查看。部署前还需按 `/tact-taste/` 子路径验证资源、键盘、作品切换、减少动态效果、图形替代与复制命令。
+
+`.github/workflows/pages.yml` 在 `main` 推送时执行检查、构建与部署，也支持手动触发。仅部署任务获得 `pages: write` 和 `id-token: write`；官方 Actions 固定到已核对提交。部署以 Actions 成功状态、Pages 返回地址和公开资源回读为证据。发布标签及版本下载包独立维护。

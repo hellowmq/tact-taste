@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tact Taste，给 AI 编程助手的 UI 与交互设计技能。在线探索文字线雕、光谱玻璃、编辑排版与纸感界面。">
+  <meta name="theme-color" content="#081614">
+  <title>Tact Taste — 有分寸，也有锋芒</title>
+  <!-- PAGE_METADATA -->
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../examples/styles.css">
+  <link rel="stylesheet" href="../examples/gallery.css">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+  <script src="../examples/text-geometry.js" defer></script>
+  <script src="../examples/particle-renderer.js" defer></script>
+  <script src="../examples/showcase.js" defer></script>
+  <script src="../examples/gallery.js" defer></script>
+</head>
+<body class="landing">
+  <a class="skip" href="#main">跳到内容</a>
+  <header class="site-header">
+    <a class="site-brand" href="#main">Tact Taste</a>
+    <nav aria-label="主导航"><a href="#work">作品</a><a href="#install">安装</a><a href="https://github.com/hellowmq/tact-taste">GitHub</a></nav>
+    <label class="site-motion"><input id="reduce-motion" type="checkbox"> 减少动态效果</label>
+  </header>
+  <main id="main">
+    <section class="hero site-width" aria-labelledby="hero-title">
+      <div class="hero-copy"><h1 id="hero-title">有分寸，<br>也有锋芒。</h1><p>给 AI 编程助手的 UI 与交互设计技能。<br>让视觉有风格，让操作有回音。</p><div class="hero-actions"><a class="site-primary" href="#work">探索作品</a><a class="site-secondary" href="#install">安装 Skill</a></div></div>
+      <div class="hero-art">
+        <div class="theatre" id="theatre" data-scene="0" data-playing="false">
+          <canvas id="motion-canvas" role="img" aria-label="文字双视角线雕：让界面有层次；让变化有来处；让操作有回音。">让界面有层次。让变化有来处。让操作有回音。</canvas>
+          <span id="semantic-text" class="sr-only">让界面有层次</span><p id="fallback-text" class="fallback-text" hidden>让界面有层次</p>
+          <span id="pair-label" class="sr-only">文本 1 · 2 / 同一件线雕</span><span id="scene-label" class="sr-only">01 / SEE THE ORDER.</span><span id="stage-progress-fill" hidden></span><output id="play-time" class="sr-only">00:01 / 00:16</output>
+        </div>
+        <div class="hero-transport"><button id="play" type="button" aria-pressed="false">播放</button><button id="replay" type="button">重播</button><label class="sr-only" for="scene-seek">文字转场进度</label><input id="scene-seek" type="range" min="0" max="16" step="0.01" value="1.2" aria-valuetext="1.2 秒，共 16 秒"><div class="phrase-choices" role="group" aria-label="选择文字视角"><button type="button" data-scene-jump="0" aria-pressed="true" aria-label="让界面有层次">01</button><button type="button" data-scene-jump="1" aria-pressed="false" aria-label="让变化有来处">02</button><button type="button" data-scene-jump="2" aria-pressed="false" aria-label="让操作有回音">03</button></div></div>
+        <p id="playback-note" class="sr-only">文本 1 → 2，再由文本 2 → 3。可暂停或反向拖动。</p><span id="context-index" class="sr-only">01</span><p id="context-copy" class="sr-only">用布局、留白和排版，让重要的内容先被看见。</p><p id="showcase-status" class="sr-only" role="status">已暂停，可播放或选择视角。</p>
+      </div>
+    </section>
+    <section class="work site-width" id="work" aria-labelledby="work-title">
+      <div class="work-heading"><h2 id="work-title">把品味，放进界面。</h2><p>三种视觉，一套连续的操作。</p></div>
+      <div class="specimen-tabs" role="tablist" aria-label="视觉作品"><span class="specimen-indicator" aria-hidden="true"></span><button role="tab" id="specimen-light" aria-controls="light-studio" aria-selected="true" tabindex="0" type="button"><span>01</span> 光谱</button><button role="tab" id="specimen-type" aria-controls="type-composer" aria-selected="false" tabindex="-1" type="button"><span>02</span> 字场</button><button role="tab" id="specimen-paper" aria-controls="paper-walk" aria-selected="false" tabindex="-1" type="button"><span>03</span> 纸间</button></div>
+      <div class="specimen-panels">
+        <!-- UI_SPECIMENS -->
+      </div>
+    </section>
+    <section class="install" id="install" aria-labelledby="install-title">
+      <div class="site-width install-layout">
+        <div class="install-copy"><h2 id="install-title">把这份品味，<br>带回你的项目。</h2><p>下载，解压，再让助手读懂它。</p><a class="download" href="https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0">下载 v0.1.0 <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 15 15 5M5 5h10v10"/></svg></a><p class="install-hint">先进入解压后的 <code>tact-taste</code> 目录。</p></div>
+        <div class="install-tools"><div class="command-panel"><div class="host-tabs" role="tablist" aria-label="安装宿主"><button type="button" role="tab" id="host-codex" aria-selected="true" aria-controls="command-codex" tabindex="0">Codex</button><button type="button" role="tab" id="host-claude" aria-selected="false" aria-controls="command-claude" tabindex="-1">Claude Code</button></div><div id="command-codex" role="tabpanel" aria-labelledby="host-codex" tabindex="0"><pre><code>python3 scripts/install.py --to \
+"$HOME/.codex/skills/tact-taste"</code></pre></div><div id="command-claude" role="tabpanel" aria-labelledby="host-claude" tabindex="0" hidden><pre><code>python3 scripts/install.py --to \
+"$HOME/.claude/skills/tact-taste"</code></pre></div><div class="copy-row"><button type="button" id="copy-command">复制安装命令</button><span id="copy-status" role="status" aria-live="polite"></span></div></div><p class="install-followup">打开新会话，用 <code id="skill-invocation">$tact-taste</code> 开始一次改进。</p></div>
+      </div>
+      <footer class="site-footer site-width"><a href="#main" class="footer-brand">Tact Taste</a><nav aria-label="项目资源"><a href="https://github.com/hellowmq/tact-taste">GitHub</a><a href="https://github.com/hellowmq/tact-taste#readme">README</a><a href="https://github.com/hellowmq/tact-taste/blob/main/LICENSE">MIT</a></nav></footer>
+    </section>
+  </main>
+</body>
+</html>

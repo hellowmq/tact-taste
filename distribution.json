@@ -39,7 +39,13 @@
     "scripts/package.py",
     "tests/test_distribution.py",
     "tests/text-geometry.cjs",
-    "distribution.json"
+    "distribution.json",
+    ".github/workflows/pages.yml",
+    "site/index.html",
+    "site/site.css",
+    "site/site.js",
+    "scripts/build_pages.py",
+    "tests/test_pages.py"
   ],
   "skill_files": [
     "SKILL.md",

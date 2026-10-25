@@ -4,7 +4,7 @@
 
 **有分寸，也有锋芒。**
 
-[English](README.en.md) · [下载 v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [安装](docs/INSTALL.md) · [示例说明](docs/EXAMPLES.md) · [MIT](LICENSE)
+[English](README.en.md) · [在线体验](https://tech.wenmq.cn/tact-taste/) · [下载 v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [安装](docs/INSTALL.md) · [示例说明](docs/EXAMPLES.md) · [MIT](LICENSE)
 
 给 AI 编程助手的 **UI 与交互设计技能**。从布局、排版、配色和材质，到选择、等待、取消与恢复，把界面的视觉和操作一起打磨。
 

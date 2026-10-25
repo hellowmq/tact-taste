@@ -4,7 +4,7 @@
 
 **Taste in the image. Tact in the interaction.**
 
-[中文](README.md) · [Download v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [Install](docs/INSTALL.md) · [Examples](docs/EXAMPLES.md) · [MIT](LICENSE)
+[中文](README.md) · [Live site](https://tech.wenmq.cn/tact-taste/) · [Download v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [Install](docs/INSTALL.md) · [Examples](docs/EXAMPLES.md) · [MIT](LICENSE)
 
 A **UI and interaction design skill for coding assistants**. Refine layout, typography, palette, and material together with selection, waiting, cancellation, and recovery.
 

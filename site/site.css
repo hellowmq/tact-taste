@@ -1,0 +1,84 @@
+/* SPDX-License-Identifier: MIT — presentation for the independent Pages site. */
+.landing { --paper:#081614; --ink:#e3e9dd; --muted:#a5b8aa; --line:#294039; --accent:#ed7858; background:var(--paper); color:var(--ink); color-scheme:dark; }
+.landing main { width:100%; margin:0; }
+.site-width,.site-header { width:min(1320px,calc(100% - 128px)); margin-inline:auto; }
+.site-header { display:flex; align-items:center; gap:36px; min-height:90px; border-bottom:1px solid var(--line); }
+.site-brand { font:400 28px Georgia,'Songti SC',serif; text-decoration:none; margin-right:auto; white-space:nowrap; }
+.site-header nav { display:flex; gap:34px; align-items:center; }
+.site-header nav a { text-decoration:none; font-size:13px; }
+.site-motion { display:flex; align-items:center; gap:8px; font-size:11px; color:var(--muted); border-left:1px solid var(--line); padding-left:28px; white-space:nowrap; }
+.site-motion input { width:16px;height:16px; }
+.hero { display:grid; grid-template-columns:42% 58%; align-items:center; min-height:610px; padding:22px 0 52px; }
+.hero-copy { position:relative; z-index:1; }
+.hero h1 { font:400 clamp(48px,6.1vw,88px)/1.35 'Songti SC','STSong',serif; margin:0 0 24px; letter-spacing:-.04em; }
+.hero-copy > p { font-size:16px; line-height:1.8; color:#c2d0c2; margin:0; }
+.hero-actions { display:flex; gap:18px; margin-top:36px; }
+.site-primary,.site-secondary { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 27px; text-decoration:none; border:1px solid; border-radius:7px; font-size:14px; }
+.site-primary { background:var(--accent); border-color:var(--accent); color:#12231b; }
+.site-secondary { border-color:#81988a; background:transparent; }
+.hero-art { min-width:0; }
+.landing .theatre { background:transparent; height:520px; aspect-ratio:auto; }
+.landing .fallback-text { color:#e3e9dd; font-size:clamp(28px,3.5vw,52px); }
+.hero-transport { display:flex; align-items:center; gap:18px; padding-inline:16px 0; }
+.hero-transport > button { color:var(--ink); background:transparent; border:0; padding:10px 0; min-height:44px; font-size:12px; white-space:nowrap; }
+.hero-transport #play { padding-left:22px; position:relative; }
+.hero-transport #play::before { content:''; position:absolute; top:16px; left:2px; border:5px solid transparent; border-left:7px solid currentColor; border-right:0; }
+.hero-transport #play[aria-pressed="true"]::before { top:16px; left:0; width:8px; height:10px; border:0; border-inline:2px solid; }
+.hero-transport #scene-seek { appearance:none; -webkit-appearance:none; min-width:30px; background:transparent; height:32px; margin:0; cursor:ew-resize; flex:1; }
+.hero-transport #scene-seek::-webkit-slider-runnable-track { height:2px; background:#455e51; }
+.hero-transport #scene-seek::-webkit-slider-thumb { appearance:none; -webkit-appearance:none; width:9px; height:9px; border-radius:50%; background:var(--accent); margin-top:-3.5px; }
+.hero-transport #scene-seek::-moz-range-track { height:2px;background:#455e51; }.hero-transport #scene-seek::-moz-range-thumb { width:9px;height:9px;border:0;border-radius:50%;background:var(--accent); }
+.hero-transport button:disabled { opacity:.45; cursor:default; }
+.phrase-choices { display:flex; gap:10px; }
+.phrase-choices button { border:1px solid #586e60; background:transparent; color:var(--ink); width:36px; height:36px; border-radius:50%; font-size:11px; }
+.phrase-choices [aria-pressed="true"] { border-color:var(--accent); color:#f4b198; }
+.work { border-top:1px solid var(--line); padding:48px 0 74px; scroll-margin-top:26px; }
+.work-heading { display:flex; justify-content:space-between; align-items:baseline; gap:20px; margin-bottom:28px; }
+.work-heading h2 { font:400 clamp(28px,3.7vw,52px)/1.4 'Songti SC','STSong',serif; margin:0; letter-spacing:-.035em; }
+.work-heading p { font-size:13px; color:var(--muted); margin:0; }
+.specimen-tabs { position:relative; display:grid; grid-template-columns:repeat(3,145px); border-bottom:1px solid var(--line); margin-bottom:24px; }
+.specimen-tabs button { background:transparent; color:var(--muted); border:0; min-height:47px; padding:12px 20px; font-size:14px; }
+.specimen-tabs button span { font-size:11px; margin-right:6px; }
+.specimen-tabs [aria-selected="true"] { color:#f1a383; }
+.specimen-indicator { position:absolute; width:145px; bottom:-1px; height:2px; background:var(--accent); transition:transform 350ms cubic-bezier(.2,.8,.2,1); pointer-events:none; }
+.landing .ui-specimen { margin:0; min-height:820px; border-radius:9px; }
+.landing .specimen-heading { font-size:10px; }
+.landing .ui-specimen:focus-visible { outline-offset:6px; }
+.install { background:#f1efe4; color:#193b30; color-scheme:light; padding:90px 0 0; scroll-margin-top:0; }
+.install-layout { display:grid; grid-template-columns:49% 51%; gap:0; align-items:center; padding:24px 0 98px; }
+.install-copy { padding-right:50px; }
+.install h2 { font:400 clamp(35px,4.4vw,64px)/1.4 'Songti SC','STSong',serif; letter-spacing:-.04em; margin:0 0 26px; }
+.install-copy > p { font-size:18px; line-height:1.8; margin:0; }
+.download { display:inline-flex; align-items:center; gap:9px; color:#a44229; font-size:17px; border-bottom:1px solid; padding-bottom:8px; text-decoration:none; margin-top:34px; }
+.download svg { height:19px;width:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round; }
+.install-copy .install-hint { margin-top:33px; font-size:13px; }
+.install code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+.command-panel { border:1px solid #416357; background:#153c30; color:#f1efe4; padding:25px 30px 24px; border-radius:8px; box-shadow:0 12px 25px #193b3017; }
+.host-tabs { display:flex; gap:28px; border-bottom:1px solid #8fafa060; }
+.host-tabs button { color:#bfcec4; background:transparent; border:0; padding:10px 9px 15px; min-height:45px; font:400 19px Georgia,serif; position:relative; }
+.host-tabs [aria-selected="true"] { color:#fff7e6; }
+.host-tabs [aria-selected="true"]::after { content:''; height:2px; background:var(--accent); position:absolute; bottom:-1px; left:0; right:0; }
+.command-panel pre { font-size:clamp(12px,1.2vw,17px); line-height:1.8; padding:40px 0; margin:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.copy-row { display:flex; align-items:center; gap:14px; padding-top:22px; border-top:1px solid #8fafa060; min-height:68px; }
+#copy-command { background:transparent; color:#fff7e6; border:1px solid #b4c8b7; border-radius:5px; padding:10px 18px; font-size:13px; min-height:43px; }
+#copy-status { font-size:11px; color:#d0ddc6; }
+.install-followup { font-size:13px; line-height:1.8; margin:25px 0 0; }
+.landing .site-footer { display:flex; align-items:center; justify-content:space-between; padding:25px 0 30px; border-top:1px solid #a2b0a2; color:#193b30; font-size:13px; }
+.footer-brand { font:400 20px Georgia,serif; text-decoration:none; }
+.site-footer nav { display:flex; gap:32px; }.site-footer nav a { text-decoration:none; }
+.landing :focus-visible { outline-color:#f3c59a; }.install :focus-visible { outline-color:#a44229; }.command-panel :focus-visible { outline-color:#f3c59a; }
+@media(max-width:1100px) {
+ .site-width,.site-header { width:calc(100% - 72px); }.site-header { gap:26px; }.site-header nav { gap:24px; }.site-motion { padding-left:24px; }
+ .hero { min-height:560px; }.landing .theatre { height:460px; }.hero-copy > p { font-size:14px; }.hero h1 { font-size:clamp(45px,6vw,70px); }.hero-actions { gap:12px; }.site-primary,.site-secondary { padding-inline:20px; }
+ .hero-transport { gap:12px; padding-left:0; }.phrase-choices { gap:6px; }.phrase-choices button { width:30px;height:30px; }.landing .ui-specimen { min-height:750px; }
+ .install-copy { padding-right:32px; }.command-panel { padding-inline:22px; }.install-copy > p { font-size:16px; }
+}
+@media(max-width:760px) {
+ .site-width,.site-header { width:calc(100% - 36px); }.site-header { min-height:94px; flex-wrap:wrap; padding:20px 0 16px; gap:15px; }.site-brand { font-size:23px; }.site-header nav { gap:20px; margin-left:auto; }.site-header nav a { font-size:12px; }.site-motion { border:0; padding:0; margin-left:auto; font-size:10px; }.site-motion input { width:14px;height:14px; }
+ .hero { grid-template-columns:1fr; padding:38px 0 36px; }.hero h1 { font-size:clamp(46px,9vw,64px); line-height:1.3; margin-bottom:19px; }.hero-copy > p { font-size:13px; }.hero-actions { margin-top:24px; gap:13px; }.site-primary,.site-secondary { min-height:44px; padding:10px 23px; font-size:13px; }
+ .landing .theatre { height:clamp(290px,76vw,440px); margin-top:14px; }.hero-transport { gap:12px; }.hero-transport > button { font-size:11px; }.phrase-choices { gap:7px; }.phrase-choices button { width:30px;height:30px; }
+ .work { padding:31px 0 40px; }.work-heading { display:block; margin-bottom:20px; }.work-heading h2 { font-size:31px; }.work-heading p { font-size:11px; margin-top:12px; }.specimen-tabs { grid-template-columns:repeat(3,1fr); margin-bottom:18px; }.specimen-tabs button { padding-inline:8px; font-size:13px; }.specimen-indicator { width:calc(100% / 3); }
+ .landing .ui-specimen { min-height:0; border-radius:5px; }
+ .install { padding-top:42px; }.install-layout { grid-template-columns:1fr; padding:0 0 43px; gap:34px; }.install-copy { padding:0; }.install h2 { font-size:36px; margin-bottom:18px; }.install-copy > p { font-size:15px; }.download { margin-top:22px; font-size:15px; }.install-copy .install-hint { margin-top:23px; font-size:12px; }.command-panel { padding:18px; }.host-tabs { gap:20px; }.host-tabs button { font-size:18px; }.command-panel pre { padding:30px 0; font-size:12px; }.copy-row { padding-top:18px; gap:12px; }#copy-command { padding-inline:14px;font-size:12px; }#copy-status { font-size:10px; }.install-followup { font-size:12px; margin-top:19px; }
+ .landing .site-footer { font-size:12px; padding-bottom:26px; }.site-footer nav { gap:21px; }.footer-brand { font-size:18px; }
+}
