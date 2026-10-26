@@ -1,10 +1,10 @@
-![Tact Taste：文字线雕、光谱玻璃、钴蓝排版与朱红纸票，取自实际运行画面](docs/media/cover.png)
+[![Tact Taste：文字线雕、光谱玻璃、钴蓝排版与朱红纸票，取自实际运行画面](docs/media/cover.png)](https://tech.wenmq.cn/tact-taste/showreel.html)
 
 # Tact Taste
 
 **有分寸，也有锋芒。**
 
-[English](README.en.md) · [在线体验](https://tech.wenmq.cn/tact-taste/) · [下载 v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [安装](docs/INSTALL.md) · [示例说明](docs/EXAMPLES.md) · [MIT](LICENSE)
+[English](README.en.md) · [在线体验](https://tech.wenmq.cn/tact-taste/) · [32 秒短片](https://tech.wenmq.cn/tact-taste/showreel.html) · [下载 v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [安装](docs/INSTALL.md) · [示例说明](docs/EXAMPLES.md) · [MIT](LICENSE)
 
 给 AI 编程助手的 **UI 与交互设计技能**。从布局、排版、配色和材质，到选择、等待、取消与恢复，把界面的视觉和操作一起打磨。
 
@@ -17,6 +17,8 @@
 - **纸间** — 纸纹、压印与金属箔；一张可以选择，也可以收回的收藏票。
 
 封面还保留了连续文字的双视角粒子线雕：文本 **1 / 2 → 2 / 3**，在同一句话上接住下一次转场。
+
+**[播放 32 秒 Showreel ↗](https://tech.wenmq.cn/tact-taste/showreel.html)** — 从线雕、调色和排版，到收藏撤回、连续选择和拖动取消。真实示例操作，配以原创音轨；[下载 MP4](https://github.com/hellowmq/tact-taste/releases/download/v0.1.0/tact-taste-showreel-v0.1.0.mp4) · [制作源码](showreel/README.md)。
 
 <details>
 <summary>展开 14 秒交互摘录</summary>

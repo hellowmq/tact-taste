@@ -1,10 +1,10 @@
-![Tact Taste: particle typography, spectral glass, cobalt type and a vermilion paper ticket, captured from the running examples](docs/media/cover.png)
+[![Tact Taste: particle typography, spectral glass, cobalt type and a vermilion paper ticket, captured from the running examples](docs/media/cover.png)](https://tech.wenmq.cn/tact-taste/showreel.html)
 
 # Tact Taste
 
 **Taste in the image. Tact in the interaction.**
 
-[中文](README.md) · [Live site](https://tech.wenmq.cn/tact-taste/) · [Download v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [Install](docs/INSTALL.md) · [Examples](docs/EXAMPLES.md) · [MIT](LICENSE)
+[中文](README.md) · [Live site](https://tech.wenmq.cn/tact-taste/) · [32-second film](https://tech.wenmq.cn/tact-taste/showreel.html) · [Download v0.1.0](https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0) · [Install](docs/INSTALL.md) · [Examples](docs/EXAMPLES.md) · [MIT](LICENSE)
 
 A **UI and interaction design skill for coding assistants**. Refine layout, typography, palette, and material together with selection, waiting, cancellation, and recovery.
 
@@ -17,6 +17,8 @@ Give the assistant your project and goal. It inspects the real interface, implem
 - **Paper Walk** — texture, printed type, and foil; choose a ticket, collect it, or change your mind.
 
 The cover also includes paired particle typography: text **1 / 2 → 2 / 3**, sharing the same second view at handoff.
+
+**[Watch the 32-second showreel ↗](https://tech.wenmq.cn/tact-taste/showreel.html)** — particle typography, color and layout, followed by collection reversal, continuous selection, and drag cancellation. Actual example interactions with an original score. [Download MP4](https://github.com/hellowmq/tact-taste/releases/download/v0.1.0/tact-taste-showreel-v0.1.0.mp4) · [Production source](showreel/README.md).
 
 <details>
 <summary>Expand the 14-second interaction excerpt</summary>

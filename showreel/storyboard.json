@@ -1,0 +1,15 @@
+{
+  "name": "Tact Taste / 有分寸，也有锋芒",
+  "format": {"width": 1920, "height": 1080, "fps": 30, "duration": 32},
+  "audience": "关注 UI、交互和 AI 编程的设计师与开发者",
+  "message": "给 AI 编程助手的 UI 与交互设计 Skill：让视觉有风格，让操作有回音。",
+  "audio": {"narration": false, "score": "original local synthesis", "samples": false, "targetLUFS": -18},
+  "scenes": [
+    {"id": "sculpture", "in": 0, "out": 8.5, "takeaway": "有分寸，也有锋芒；同一个对象的空间连续性", "source": "examples/showcase.js", "evidence": "原始 seek 控件采样 1→2、2→3 的几何时间轴", "attention": "品牌左、作品右，随后进入完整线雕", "readingHold": "三句文字各有完整可读的停留"},
+    {"id": "light", "in": 8.5, "out": 13, "takeaway": "颜色与连续 alpha 改变表面", "source": "examples/gallery.js", "evidence": "珊瑚按钮、透光拖动到 86%、冰蓝按钮；均检查真实状态", "attention": "鼠标控件→材质响应", "readingHold": "调色后保留材质落定画面"},
+    {"id": "type", "in": 13, "out": 17.5, "takeaway": "排版是一组关系", "source": "examples/gallery.js", "evidence": "留白、错位、反转配色、回到大字", "attention": "大字变化与右侧选择关联", "readingHold": "保留完整字形，不在读字时遮盖内容"},
+    {"id": "paper", "in": 17.5, "out": 22, "takeaway": "纸的温度与操作的余地", "source": "examples/gallery.js", "evidence": "选择 024、收藏、撤回、选择 036", "attention": "选项→票面→收藏印章", "readingHold": "印章出现和撤回各自可辨"},
+    {"id": "operations", "in": 22, "out": 28.5, "takeaway": "连续选择；预览可以取消；松手才确认", "source": "examples/demo.js", "evidence": "连续选择反向；位置 35 拖到 78，Escape 恢复 35；再拖到 62 松手确认", "attention": "先左侧选择，后右侧拖动，避免同时竞争", "readingHold": "取消与确认后保留结果文字"},
+    {"id": "closing", "in": 28.5, "out": 32, "takeaway": "把这份品味带回自己的项目", "source": "original film composition", "evidence": "真实品牌、Skill 定位、仓库地址", "attention": "品牌→价值→地址", "readingHold": "最后一帧完整保持，无淡黑截断"}
+  ]
+}

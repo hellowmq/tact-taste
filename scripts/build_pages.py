@@ -21,6 +21,9 @@ ASSETS = {
     "site/site.css": "assets/site.css",
     "site/site.js": "assets/site.js",
     "docs/media/cover.png": "assets/cover.png",
+    "docs/media/showreel-poster.png": "assets/showreel-poster.png",
+    "site/showreel.css": "assets/showreel.css",
+    "site/showreel.js": "assets/showreel.js",
 }
 PANELS = {"light-studio": "specimen-light", "type-composer": "specimen-type", "paper-walk": "specimen-paper"}
 
@@ -111,13 +114,22 @@ def build(output, base_url="https://hellowmq.github.io/tact-taste/", root=ROOT):
             page = page.replace('"' + Path(source).name + '"', '"' + target + '"')
     resources = LocalResources()
     resources.feed(page)
-    allowed = {"index.html", *ASSETS.values()}
+    allowed = {"index.html", "showreel.html", *ASSETS.values()}
     for link in resources.links:
         parts = urlsplit(link)
         if not parts.scheme and not parts.netloc and parts.path and parts.path not in allowed:
             raise ValueError("Page links to a non-deployed local resource: " + link)
     output.mkdir(parents=True, exist_ok=False)
     (output / "index.html").write_text(page, encoding="utf-8")
+    reel = (root / "site/showreel.html").read_text()
+    reel_meta = (f'<link rel="canonical" href="{html.escape(canonical + "showreel.html", quote=True)}">\n'
+                 '<meta property="og:type" content="website">\n'
+                 '<meta property="og:title" content="Tact Taste — 32 秒 Showreel">\n'
+                 f'<meta property="og:image" content="{html.escape(canonical + "assets/showreel-poster.png", quote=True)}">')
+    reel = reel.replace("<!-- PAGE_METADATA -->", reel_meta)
+    reel = reel.replace('"showreel.css"', '"assets/showreel.css"').replace('"showreel.js"', '"assets/showreel.js"')
+    reel = reel.replace("../docs/media/showreel-poster.png", "assets/showreel-poster.png")
+    (output / "showreel.html").write_text(reel, encoding="utf-8")
     for source, target in ASSETS.items():
         destination = output / target
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -135,7 +147,7 @@ def main():
     except (ValueError, OSError) as error:
         print("Pages build stopped: " + str(error), file=sys.stderr)
         return 1
-    print(f"Built {len(ASSETS) + 1} Pages files at {output}; no publication performed.")
+    print(f"Built {len(ASSETS) + 2} Pages files at {output}; no publication performed.")
     return 0
 
 

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="32 秒认识 Tact Taste：连续文字线雕、光谱材质、编辑排版、纸感界面与真实交互。">
+  <meta name="theme-color" content="#081614">
+  <title>Tact Taste — 32 秒 Showreel</title>
+  <!-- PAGE_METADATA -->
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="showreel.css">
+  <script src="showreel.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="index.html">Tact Taste</a><span class="badge">SHOWREEL 01 / 有分寸，也有锋芒。</span></header>
+  <main>
+    <div class="intro"><h1>有分寸，也有锋芒。</h1><span class="meta">32 SEC / 1080P / 30 FPS</span></div>
+    <video id="reel" controls playsinline preload="metadata" poster="../docs/media/showreel-poster.png" aria-label="Tact Taste showreel，32 秒，包含视觉作品与真实交互">
+      <source src="https://github.com/hellowmq/tact-taste/releases/download/v0.1.0/tact-taste-showreel-v0.1.0.mp4" type="video/mp4">
+      你的浏览器暂不支持视频播放，可使用下方的 MP4 下载链接。
+    </video>
+    <nav class="chapters" aria-label="跳到分镜">
+      <button type="button" data-time="0" aria-pressed="true">00 线雕</button>
+      <button type="button" data-time="8.5" aria-pressed="false">01 光谱</button>
+      <button type="button" data-time="13" aria-pressed="false">02 字场</button>
+      <button type="button" data-time="17.5" aria-pressed="false">03 纸间</button>
+      <button type="button" data-time="22" aria-pressed="false">04 操作</button>
+      <button type="button" data-time="28.5" aria-pressed="false">05 Tact Taste</button>
+    </nav>
+    <div class="actions">
+      <button id="toggle" type="button">播放 Showreel</button>
+      <a href="https://github.com/hellowmq/tact-taste/releases/download/v0.1.0/tact-taste-showreel-v0.1.0.mp4">下载 MP4 · 16.6 MiB</a>
+      <a href="index.html#work">亲手体验作品</a>
+      <span class="clock" id="time">00:00 / 00:32</span>
+    </div>
+    <p role="status" id="status">点击播放。调色、排版、收藏、连续选择与拖动取消均来自真实示例。</p>
+    <p class="note">画幅、镜头和节奏经过编排；配乐及操作音由本项目合成。可用 Tab 选择章节，Enter 跳转。<a href="https://github.com/hellowmq/tact-taste/tree/main/showreel">制作源码与方法</a> · <a href="https://github.com/hellowmq/tact-taste/releases/tag/v0.1.0">Release</a></p>
+  </main>
+</body>
+</html>

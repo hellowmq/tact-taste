@@ -1,6 +1,7 @@
 """The hosted surface must stay scoped, portable, and non-overwriting."""
 
 import sys
+import json
 import tempfile
 from pathlib import Path
 import unittest
@@ -14,7 +15,7 @@ class PagesTests(unittest.TestCase):
     def test_scoped_build_keeps_shared_bytes_and_project_relative_urls(self):
         output = Path(tempfile.mkdtemp(prefix="tact-taste-pages-test-")) / "tact-taste"
         build(output, "http://tech.wenmq.cn/tact-taste")
-        self.assertEqual({p.relative_to(output).as_posix() for p in output.rglob("*") if p.is_file()}, {"index.html", *ASSETS.values()})
+        self.assertEqual({p.relative_to(output).as_posix() for p in output.rglob("*") if p.is_file()}, {"index.html", "showreel.html", *ASSETS.values()})
         for source, target in ASSETS.items():
             self.assertEqual((ROOT / source).read_bytes(), (output / target).read_bytes())
         page = (output / "index.html").read_text()
@@ -25,6 +26,20 @@ class PagesTests(unittest.TestCase):
         self.assertEqual(page.count(" hidden inert"), 2)
         with self.assertRaises(ValueError):
             build(output)
+
+    def test_showreel_links_to_the_release_and_keeps_media_out_of_pages_and_git(self):
+        output = Path(tempfile.mkdtemp(prefix="tact-taste-reel-test-")) / "pages"
+        build(output, "https://example.com/tact-taste/")
+        page = (output / "showreel.html").read_text()
+        record = json.loads((ROOT / "docs/showreel.json").read_text())
+        self.assertIn(record["url"], page)
+        self.assertIn('poster="assets/showreel-poster.png"', page)
+        self.assertIn('href="https://example.com/tact-taste/showreel.html"', page)
+        self.assertIn('controls playsinline preload="metadata"', page)
+        self.assertNotIn("autoplay", page)
+        self.assertNotIn("<!-- PAGE_METADATA -->", page)
+        self.assertFalse(list(output.rglob("*.mp4")))
+        self.assertNotIn(".mp4", "\n".join(json.loads((ROOT / "distribution.json").read_text())["files"]))
 
     def test_source_and_invalid_urls_are_rejected_before_output_is_created(self):
         with self.assertRaises(ValueError):

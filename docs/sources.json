@@ -241,7 +241,24 @@
         "height": 588,
         "frames": 140,
         "duration_ms": 14000
+      },
+      {
+        "path": "docs/media/showreel-poster.png",
+        "sha256": "748a1de2347272c88246bea3317460789d3d31c25b82c6b3e4e33a0b07d0051d",
+        "bytes": 661762,
+        "width": 1920,
+        "height": 1080,
+        "implementation_commit": "b05a92d1b5801f507a37c21ef5e537fb66ded02d",
+        "kind": "decoded-showreel-first-frame"
       }
     ]
+  },
+  "owned_showreel": {
+    "record": "docs/showreel.json",
+    "license": "MIT",
+    "original_audio": true,
+    "third_party_samples": false,
+    "binary_in_git": false,
+    "production_sources": "showreel/README.md"
   }
 }

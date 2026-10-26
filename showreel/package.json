@@ -1,0 +1,13 @@
+{
+  "name": "tact-taste-showreel",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "stills": "node render.mjs --stills",
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

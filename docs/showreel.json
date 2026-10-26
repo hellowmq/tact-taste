@@ -1,0 +1,14 @@
+{
+  "asset": "tact-taste-showreel-v0.1.0.mp4",
+  "url": "https://github.com/hellowmq/tact-taste/releases/download/v0.1.0/tact-taste-showreel-v0.1.0.mp4",
+  "sha256": "a7ff00a1d5bb354ef7e6d7918e85b0262f8b3aea9c49d5dda943d321d4049d92",
+  "bytes": 17364199,
+  "duration_seconds": 32,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "license": "MIT",
+  "source_examples_commit": "b05a92d1b5801f507a37c21ef5e537fb66ded02d",
+  "production_date": "2026-10-25",
+  "published_on": "2026-10-27"
+}

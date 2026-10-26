@@ -23,6 +23,7 @@ tact-taste/
 ├── references/              UI、动效模式与工程经验
 ├── docs/                    安装、验收、来源与展示素材
 ├── examples/                文字线雕、视觉 UI 与操作研究
+├── showreel/                32 秒影片的源码、分镜与原创音轨生成
 ├── scripts/                 安装、检查与打包
 ├── tests/                   安装与分发边界测试
 ├── distribution.json        项目分发与技能安装白名单
@@ -55,7 +56,7 @@ python3 scripts/package.py --output dist/tact-taste.zip
 
 在线页面： [Tact Taste](https://tech.wenmq.cn/tact-taste/)。账号个人 Pages 的自定义域名由 GitHub 继承，此项目独立部署到 `/tact-taste/`；个人站的源码和设置不参与本工作流。
 
-`site/` 是精简展示页的排版与控制层，文字线雕和三组视觉 UI 从 `examples/` 复用。构建只输出入口、八个脚本/样式与一张分享封面，共十个文件，不上传整个项目目录。
+`site/` 是展示页与短片播放器的排版和控制层，文字线雕和三组视觉 UI 从 `examples/` 复用。构建只输出明确列出的 HTML、脚本、样式与封面，共十四个文件。MP4 来自 Release，不进入 Git 历史、Pages 构建目录或技能安装。
 
 ```sh
 python3 scripts/build_pages.py --output dist/pages --base-url https://tech.wenmq.cn/tact-taste/
@@ -65,3 +66,5 @@ python3 -m http.server 8766 --bind 127.0.0.1 --directory dist/pages
 输出目录已存在时构建拒绝覆盖；使用新的空输出目录。打开本机 8766 端口查看。部署前还需按 `/tact-taste/` 子路径验证资源、键盘、作品切换、减少动态效果、图形替代与复制命令。
 
 `.github/workflows/pages.yml` 在 `main` 推送时执行检查、构建与部署，也支持手动触发。仅部署任务获得 `pages: write` 和 `id-token: write`；官方 Actions 固定到已核对提交。部署以 Actions 成功状态、Pages 返回地址和公开资源回读为证据。发布标签及版本下载包独立维护。
+
+影片的本地依赖、复现命令与来源见 [Showreel 制作说明](../showreel/README.md)。影片制作不参与 Pages CI；修改播放器时，实际验证播放、暂停、章节跳转、媒体失败提示与窄屏。成片作为现有 Release 的补充展示附件，保留既有安装包和校验文件。
